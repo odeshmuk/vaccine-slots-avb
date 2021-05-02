@@ -13,7 +13,9 @@ namespace vaccine_slot_availaibility
         {
             var cowinData=GetCowinData();
             var relevantCenters=GetAvailableSlotsFor18Plus(cowinData);
-            string message=BuildMessage(relevantCenters);
+            string message = String.Empty;
+            if(relevantCenters.Count>0)
+                message=BuildMessage(relevantCenters);
             Console.Write(message);
         }
 
@@ -44,7 +46,7 @@ namespace vaccine_slot_availaibility
                     }
                 }
             }
-            return relevantCenters;
+            return availableSlots;
         }
 
         static string BuildMessage(List<Center> centers){

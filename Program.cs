@@ -11,6 +11,7 @@ namespace vaccine_slot_availaibility
         static HttpClient client = new HttpClient();
         static void Main(string[] args)
         {
+            //
             var cowinData=GetCowinData();
             var relevantCenters=GetAvailableSlotsFor18Plus(cowinData);
             string message = String.Empty;
